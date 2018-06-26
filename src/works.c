@@ -5,6 +5,7 @@ int k;
 int A[100000];
 
 
+
 int main(){
   int i, lb, ub;
   scanf("%d%d", &n, &k);
@@ -13,5 +14,18 @@ int main(){
   }
 
 
-  return 0;
+    lb = 0 ;
+    ub = 1000000000 ;
+    while (ub - lb > 1){
+        int m = (ub + lb)/2;
+        if (sumup(m)){
+            ub = m ;
+        }
+        else{
+            lb = m ;
+        }
+    }
+    
+    printf("%d\n",ub) ;
+    return 0;
 }

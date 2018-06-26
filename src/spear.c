@@ -4,6 +4,20 @@ int n;
 int k;
 int A[100000];
 
+int sumup(int m){
+    int i ; int x = 0; int a;
+    for (i = 1 ; i < n; i++){
+        a = A[i]/m ;
+        x = a + x;
+    }
+    return x < k ;
+}
+
+
+
+
+
+
 
 int main(){
   int i, lb, ub;
@@ -11,6 +25,20 @@ int main(){
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
+    
+    lb = 0 ;
+    ub = 1000000000 ;
+    while (ub - lb > 1){
+        int m = (ub + lb)/2;
+        if (sumup(m)){
+            ub = m ;
+        }
+        else{
+            lb = m ;
+        }
+    }
+    
+    printf("%d\n",lb) ;
 
 
   return 0;
