@@ -6,7 +6,7 @@ int A[100000];
 
 int sumup(int m){
     int i ; int x = 0; int a;
-    for (i = 1 ; i < n; i++){
+    for (i = 0 ; i < n; i++){
         a = A[i]/m ;
         x = a + x;
     }
@@ -27,7 +27,7 @@ int main(){
   }
     
     lb = 0 ;
-    ub = 1000000000 ;
+    ub = 1000000001 ;
     while (ub - lb > 1){
         int m = (ub + lb)/2;
         if (sumup(m)){

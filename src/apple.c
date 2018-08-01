@@ -6,7 +6,7 @@ int A[100000];
 
 int sumup(int m){
     int i ; int x = 0; int a;
-    for (i = 1 ; i < n; i++){
+    for (i = 0 ; i < n; i++){
         if (A[i] % m ==0){
             a = A[i]/m ;
         }
@@ -15,7 +15,7 @@ int sumup(int m){
         }
         x = a + x;
         }
-    return x < k ;
+    return x <= k ;
     }
 
 

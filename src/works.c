@@ -4,6 +4,29 @@ int n;
 int k;
 int A[100000];
 
+int b(int m){
+int i,s,x;
+ s = 0;
+ x = 1;
+ for(i=0;i<n;i++){
+    if(A[i]>m)return 0;
+    if(s + A[i]<= m)s = s +A[i];
+        else {
+        x++;
+        s=A[i];
+        }
+ }
+    return x <= k;
+    }
+
+
+
+
+
+
+
+
+
 
 
 int main(){
@@ -18,7 +41,7 @@ int main(){
     ub = 1000000000 ;
     while (ub - lb > 1){
         int m = (ub + lb)/2;
-        if (sumup(m)){
+        if (b(m)){
             ub = m ;
         }
         else{
